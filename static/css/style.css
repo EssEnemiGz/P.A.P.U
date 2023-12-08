@@ -132,6 +132,8 @@ body {
 
 .icon-box{
     font-variation-settings: 'wght' 300;
+    color: var(--eerie-black);
+    font-weight: var(--fw-500);
 }
 
 /* HEADER STYLE */
@@ -143,6 +145,7 @@ body {
     background-color: var(--white);
     padding-block: 10px;
     box-shadow: var(--shadow-3);
+    z-index: 10;
 }
 
 .nav{
@@ -177,6 +180,12 @@ body {
     margin-inline: auto;
 }
 
+.access > li{
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
 .profile-card{
     display: flex;
     align-items: center;
@@ -209,6 +218,7 @@ body {
     border-radius: var(--radius-6);
     background-color: var(--white);
     box-shadow: var(--shadow-2);
+    height: fit-content;
 }
 
 .container{
@@ -240,7 +250,7 @@ body {
 
 .home{
     display: grid;
-    grid-template-columns: 1.25fr 0.75fr 1fr;
+    grid-template-columns: 0.75fr 1fr;
     gap: 25px;
 }
 
@@ -262,11 +272,26 @@ body {
     color: var(--cool-gray);
 }
 
-.secundary-data > *{
+.secundary-data{
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.secundary-data > label {
+    display: flex;
+    column-gap: 5px;
+}
+
+.secundary-data > label > span{
+    font-size: var(--fs-3);
+    color: var(--cool-gray);
+}
+
+.mail, .phone-number{
     /*font-weight: var(--fw-600);*/
     color: var(--cool-gray);
     font-size: var(--fs-7);
     display: flex;
     align-items: center;
-    gap: 5px;
 }

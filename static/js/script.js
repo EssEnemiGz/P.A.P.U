@@ -11,8 +11,8 @@ const myChart = new Chart(ctx, {
         datasets: [{
             label: 'Ventas por mes',
             data: data,
-            backgroundColor: 'rgb(126, 215, 193)', // Color de las barras
-            borderColor: 'rgb(126, 215, 193)', // Borde de las barras
+            backgroundColor: '#00003D', // Color de las barras
+            borderColor: '#8C898A', // Borde de las barras
             borderWidth: 1
         }]
       },

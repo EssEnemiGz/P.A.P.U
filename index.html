@@ -10,36 +10,53 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;900&display=swap"
       rel="stylesheet">
-  
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  
+    <!-- CSS-->
     <link rel="stylesheet" href="static/css/style.css">
+
+    <!-- CHART.JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header class="header">
         <nav class="nav container">
-            <h1 class="title">Workspace</h1>
+            <h1 class="title">P.A.P.U</h1>
             <nav class="navegation">
-                <div class="access">
-                    <span>
+                <ul class="access">
+                    <li>
+                        <span class="material-symbols-outlined icon-box">
+                            home
+                        </span>
                         <a href="#" class="link">Inicio</a>
-                    </span>
-                    <span>
+                    </li>
+                    <li>
+                        <span class="material-symbols-outlined icon-box">
+                            description
+                        </span>
                         <a href="#" class="link">Reportes</a>
-                    </span>
-                    <span>
+                    </li>
+                    <li>
+                        <span class="material-symbols-outlined icon-box">
+                            link
+                        </span>
                         <a href="#" class="link">Sitios</a>
-                    </span>
-                    <span>
+                    </li>
+                    <li>
+                        <span class="material-symbols-outlined icon-box">
+                            settings
+                        </span>
                         <a href="#" class="link">Ajustes</a>
-                    </span>
-                </div>
+                    </li>
+                </ul>
                 <div class="profile-card">
                     <figure class="picture-info">
                         <img src="./static/img/tcerlogo-png-edited.png" alt="Profile picture" width="32" height="32">                                
                     </figure>
                     <label class="text-info">
                         <p class="text-info_title">Biscen Fabián</p>
-                        <p class="text-info_role">Admin</p>
+                        <p class="text-info_role">Web and Graphic Designer</p>
                     </label>
                 </div>
             </nav>
@@ -49,7 +66,7 @@
     <main class="main">
         <article class="container content">
             <h2 class="content__title">Hi Biscen Fabián</h2>
-            <p class="content__subtitle">Welcome to dashboard</p>
+            <p class="content__subtitle">Welcome to P.A.P.U :v</p>
             <section class="home">
                 <div class="profile card">
                     <div class="principal-data">
@@ -62,39 +79,30 @@
                         </div>
                     </div>
                     <div class="secundary-data">
-                        <a href="mailto:biscenp@gmail.com" class="mail">biscenp@gmail.com</a>
+                        <label>
+                            <span class="material-symbols-outlined icon-box">
+                                mail
+                            </span>
+                            <a href="mailto:biscenp@gmail.com" class="mail">biscenp@gmail.com</a>
+                        </label>
+                        <label>
+                            <span class="material-symbols-outlined icon-box">
+                                call
+                            </span>
+                            <a href="#" class="phone-number">829-867-5991</a>
+                        </label>
                     </div>
                 </div>
-                <div class="profile card">
+                <div class="mini-stat card">
                     <div class="principal-data">
-                        <figure class="image">
-                            <img src="./static/img/tcerlogo-png-edited.png" alt="Profile picture" width="50" height="50">
-                        </figure>
-                        <div class="user-information">
-                            <p class="encabezado">Biscen Fabián</p>
-                            <p class="micro-text">Web and Graphic Designer</p>
-                        </div>
-                    </div>
-                    <div class="secundary-data">
-                        <a href="mailto:biscenp@gmail.com" class="mail">biscenp@gmail.com</a>
-                    </div>
-                </div>
-                <div class="profile card">
-                    <div class="principal-data">
-                        <figure class="image">
-                            <img src="./static/img/tcerlogo-png-edited.png" alt="Profile picture" width="50" height="50">
-                        </figure>
-                        <div class="user-information">
-                            <p class="encabezado">Biscen Fabián</p>
-                            <p class="micro-text">Web and Graphic Designer</p>
-                        </div>
-                    </div>
-                    <div class="secundary-data">
-                        <a href="mailto:biscenp@gmail.com" class="mail">biscenp@gmail.com</a>
+                        <canvas id="myChart" style="max-width: 800px;max-height: 300px;"></canvas>
                     </div>
                 </div>
             </section>
         </article>
     </main>
+
+    <!-- JS SCRIPTS -->
+    <script src="./static/js/script.js"></script>
 </body>
 </html>
