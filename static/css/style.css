@@ -186,6 +186,21 @@ body {
     column-gap: 10px;
 }
 
+
+.mmg{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    padding-right: 15px;
+    border-radius: var(--radius-6);
+    position: relative;
+    background-color: var(--white);
+    box-shadow: var(--shadow-2);
+    height: fit-content;
+
+
+}
 .profile-card{
     display: flex;
     align-items: center;
@@ -294,4 +309,28 @@ body {
     font-size: var(--fs-7);
     display: flex;
     align-items: center;
+}
+
+
+.secondary-cards{
+    position: relative;
+    padding-top: 74px;
+    height: fit-content;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.secondary-cards img{
+    margin-right: 30px;
+    display: inline-block;
+
+}
+
+
+.imagenmy{
+    width: 375px;
+    height: 375px;
+    border-radius: 6%;
+    padding-top: 18px;
+    ;
 }
