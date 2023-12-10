@@ -186,21 +186,6 @@ body {
     column-gap: 10px;
 }
 
-
-.mmg{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px;
-    padding-right: 15px;
-    border-radius: var(--radius-6);
-    position: relative;
-    background-color: var(--white);
-    box-shadow: var(--shadow-2);
-    height: fit-content;
-
-
-}
 .profile-card{
     display: flex;
     align-items: center;
@@ -263,6 +248,11 @@ body {
     margin-bottom: 25px;
 }
 
+.two-cards{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
 .home{
     display: grid;
     grid-template-columns: 0.75fr 1fr;
@@ -311,26 +301,26 @@ body {
     align-items: center;
 }
 
-
-.secondary-cards{
-    position: relative;
-    padding-top: 74px;
-    height: fit-content;
-    font-family: sans-serif;
-    text-align: center;
+.project{
+    display: flex;
+    align-items: center;
+    gap: 25px;
 }
 
-.secondary-cards img{
-    margin-right: 30px;
-    display: inline-block;
-
+.project > span{
+    background-color: var(--emerald_12);
+    color: var(--emerald);
+    padding: 10px;
+    border-radius: var(--radius-6);
 }
 
+.project-status > h3{
+    color: var(--onyx-2);
+    font-size: var(--fs-3);
+    font-weight: var(--fw-500);
+}
 
-.imagenmy{
-    width: 375px;
-    height: 375px;
-    border-radius: 6%;
-    padding-top: 18px;
-    ;
+.project-status > p{
+    color: var(--cool-gray);
+    font-size: var(--fs-6);
 }

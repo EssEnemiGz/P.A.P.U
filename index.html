@@ -69,49 +69,63 @@
             <h2 class="content__title">Hi Biscen Fabián</h2>
             <p class="content__subtitle">Welcome to P.A.P.U :v</p>
             <section class="home">
-                <div class="profile card">
-                    <div class="principal-data">
-                        <figure class="image">
-                            <img src="./static/img/tcerlogo-png-edited.png" alt="Profile picture" width="50" height="50">
-                        </figure>
-                        <div class="user-information">
-                            <p class="encabezado">Biscen Fabián</p>
-                            <p class="micro-text">Web and Graphic Designer</p>
+                <div class="two-cards">
+                    <div class="profile card">
+                        <div class="principal-data">
+                            <figure class="image">
+                                <img src="./static/img/tcerlogo-png-edited.png" alt="Profile picture" width="50" height="50">
+                            </figure>
+                            <div class="user-information">
+                                <p class="encabezado">Biscen Fabián</p>
+                                <p class="micro-text">Web and Graphic Designer</p>
+                            </div>
                         </div>
-                       
+                        <div class="secundary-data">
+                            <label>
+                                <span class="material-symbols-outlined icon-box">
+                                    mail
+                                </span>
+                                <a href="mailto:biscenp@gmail.com" class="mail">biscenp@gmail.com</a>
+                            </label>
+                            <label>
+                                <span class="material-symbols-outlined icon-box">
+                                    call
+                                </span>
+                                <a href="#" class="phone-number">829-867-5991</a>
+                            </label>      
+                        </div>
                     </div>
-                    <div class="secundary-data">
-                        <label>
-                            <span class="material-symbols-outlined icon-box">
-                                mail
-                            </span>
-                            <a href="mailto:biscenp@gmail.com" class="mail">biscenp@gmail.com</a>
+                    <div class="project card">
+                        <span class="material-symbols-outlined">
+                            task_alt
+                        </span>
+                        <label class="project-status">
+                            <h3>Project status</h3>
+                            <p>Completed</p>
                         </label>
-                        <label>
-                            <span class="material-symbols-outlined icon-box">
-                                call
-                            </span>
-                            <a href="#" class="phone-number">829-867-5991</a>
-                        </label>      
                     </div>
-                   </div>
+                    <div class="project card">
+                        <span class="material-symbols-outlined">
+                            task_alt
+                        </span>
+                        <label class="project-status">
+                            <h3>Tasks</h3>
+                            <p>Completed</p>
+                        </label>
+                    </div>
+                </div>
                    
                 <div class="mini-stat card">
                     <div class="principal-data">
                         <canvas id="myChart" style="max-width: 800px;max-height: 300px;"></canvas>
                     </div>
                 </div>
-                </label>
-            </section>
-            <section class="secondary-cards">
-                <h1>Graphics</h1>
-                <div class="pastel">
-                    <img src="./static/img/Pastel.png" class="imagenmy">
-                <div class="barras">
-                    <img src="./static/img/barras.png" class="imagenmy">
+                <div class="pastel mini-stat card">
+                    <canvas id="myChart2" style="max-width: 800px;max-height: 300px;"></canvas>
+                </div>    
+                <div class="barras mini-stat card">
+                    <canvas id="myChart3" style="max-width: 800px;max-height: 300px;"></canvas>
                 </div>
-                
-               </div>
             </section>
         </article>
     </main>
