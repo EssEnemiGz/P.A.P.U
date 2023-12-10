@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P.A.P.U Company</title>
+
+    <!-- GOOGLE FONT LINK-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;900&display=swap"
+      rel="stylesheet">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  
+    <!-- CSS-->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- CHART.JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- PARA LOS PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <h1 class="title">P.A.P.U</h1>
+            <nav class="navegation">
+                <ul class="access">
+                    <li>
+                        <span class="material-symbols-outlined icon-box">
+                            home
+                        </span>
+                        <a href="../../index.html" class="link">Inicio</a>
+                    </li>
+                    <li>
+                        <span class="material-symbols-outlined icon-box">
+                            description
+                        </span>
+                        <a href="#" class="link">Reportes</a>
+                    </li>
+                    <li>
+                        <span class="material-symbols-outlined icon-box">
+                            link
+                        </span>
+                        <a href="#" class="link">Sitios</a>
+                    </li>
+                    <li>
+                        <span class="material-symbols-outlined icon-box">
+                            settings
+                        </span>
+                        <a href="#" class="link">Ajustes</a>
+                    </li>
+                </ul>
+                <div class="profile-card">
+                    <figure class="picture-info">
+                        <img src="../img/tcerlogo-png-edited.png" alt="Profile picture" width="32" height="32">                                
+                    </figure>
+                    <label class="text-info">
+                        <p class="text-info_title">Biscen Fabián</p>
+                        <p class="text-info_role">Web and Graphic Designer</p>
+                    </label>
+                    
+                </div>
+            </nav>
+        </nav>
+    </header>
+    <!-- MAIN SECTION -->
+    <main class="main">
+        <article class="container content">
+            <section class="principal">
+                <div class="card main-content">
+                    <div class="micro-card">
+                        <h1 class="pdf-title">Reporte de la P.A.P.U base de datos</h1>
+                        <h3 class="pdf-subtitle">Reporte ejecutivo</h3>
+                        <p class="pdf-content"><span class="db-name">NOMBRE DE LA BASE DE DATOS.</span><br> Los datos han sido extraídos y procesados a partir de un archivo JSON, permitiendo identificar tendencias y métricas clave relevantes para la toma de decisiones. <br><br><span class="date">FECHA</span></p>
+                    </div>
+                    <div class="micro-card">
+                        <h1 class="pdf-title">Métricas de la base de datos</h1>
+                        <h3 class="pdf-subtitle">Total de registros</h3>
+                        <p class="pdf-content"><br><span class="numero-registros">NUMERO DE REGISTROS</span></p>
+                        <p class="pdf-content"><br><span class="size">TAMAÑO</span></p>
+                    </div>
+                    <div class="micro-card">
+                        <h1 class="pdf-title">Conclusiones</h1>
+                        <h3 class="pdf-subtitle">Análisis generales</h3>
+                        <p class="pdf-content">El análisis de la base de datos a través del archivo JSON proporciona una visión integral de la base de datos. La tendencia de la base de datos es: <br><br><span class="tendencia">SUBIDA O BAJADA</span></p>
+                    </div>
+                    <div class="micro-card">
+                        <h1 class="pdf-title">Anexos</h1>
+                        <div class="anexos">
+                            <div class="pastel mini-stat card">
+                                <canvas id="myChart2" style="max-width: 400px;max-height: 300px;"></canvas>
+                            </div>    
+                            <div class="barras mini-stat card">
+                                <canvas id="myChart3" style="max-width: 400px;max-height: 300px;"></canvas>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <div class="up">
+		<label for="up__input" class="up__files">
+            <span class="material-symbols-outlined icon-box">
+                add
+            </span>		
+        </label>
+		<input type="file" id="up__input" onchange="cargarJSON()" multiple>
+	</div>
+
+    <!-- JS -->
+    <script src="../js/report.js"></script>
+</body>
+</html>

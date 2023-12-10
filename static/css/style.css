@@ -358,3 +358,40 @@ body {
 	width: 0.1px;
 	height: 0.1px;
 }
+
+.main-content{
+    margin-inline: auto;
+    width: 1100px;
+    padding: 50px;
+}
+
+.micro-card{
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.pdf-title{
+    margin-top: 25px;
+    margin-inline: auto;
+    font-size: var(--fs-1);
+    font-weight: var(--fw-500);
+}
+
+.pdf-subtitle{
+    margin-top: 25px;
+    margin-bottom: 5px;
+    font-size: var(--fs-3);
+    font-weight: var(--fw-500);
+}
+
+.anexos{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.mini-stat{
+    box-shadow: 2px 5px 5px 3px lightgrey;
+    border-radius: var(--radius-6);
+}
