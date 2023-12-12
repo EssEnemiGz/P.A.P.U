@@ -391,7 +391,7 @@ body {
     margin-top: 50px;
 }
 
-.mini-stat{
+.card{
     box-shadow: 2px 5px 5px 3px lightgrey;
     border-radius: var(--radius-6);
 }
