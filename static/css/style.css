@@ -395,3 +395,16 @@ body {
     box-shadow: 2px 5px 5px 3px lightgrey;
     border-radius: var(--radius-6);
 }
+footer {
+    height: 20em;
+    background-color: var(--white);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* padding-inline: 20px; */
+    padding-block: 10px;
+}
+footer  a {
+    color: #000;
+    text-decoration: underline;
+}
