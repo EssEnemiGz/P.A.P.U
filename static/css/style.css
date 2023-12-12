@@ -402,9 +402,23 @@ footer {
     justify-content: space-around;
     align-items: center;
     /* padding-inline: 20px; */
+    margin-top: 50px;
     padding-block: 10px;
 }
 footer  a {
     color: #000;
     text-decoration: underline;
+}
+
+.footer-title{
+    font-weight: var(--fw-500);
+}
+
+.footer-subtitle{
+    font-size: var(--fs-6);
+}
+
+.container-logo{
+    display: flex;
+    align-items: center;
 }
