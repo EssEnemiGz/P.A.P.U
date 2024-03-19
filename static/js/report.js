@@ -96,3 +96,48 @@ function cargarJSON() {
       reader.readAsText(file);
     }
 }
+
+async function leerArchivoExcel() {
+    const fileInput = document.getElementById('up__input');
+
+    // Verificar si se ha seleccionado un archivo
+    if (!fileInput.files || fileInput.files.length === 0) {
+        console.error('No se ha seleccionado ningún archivo.');
+        return;
+    }
+
+    // Obtener el archivo seleccionado
+    const archivo = fileInput.files[0];
+
+    // Verificar que sea un archivo Excel (.xlsx)
+    if (!archivo.name.endsWith('.xlsx')) {
+        console.error('El archivo seleccionado no es un archivo Excel (.xlsx).');
+        return;
+    }
+
+    // Crear un nuevo objeto Workbook de exceljs
+    const workbook = new ExcelJS.Workbook();
+
+    // Leer el contenido del archivo utilizando FileReader
+    const reader = new FileReader();
+    reader.onload = async (event) => {
+        const buffer = event.target.result;
+
+        // Cargar el archivo Excel desde el buffer
+        await workbook.xlsx.load(buffer);
+
+        // Obtener la primera hoja de cálculo del archivo
+        const worksheet = workbook.getWorksheet(1);
+
+        // Iterar sobre las filas y columnas del archivo Excel
+        worksheet.eachRow((row, rowIndex) => {
+            console.log(`Fila ${rowIndex}:`);
+            row.eachCell((cell, colIndex) => {
+                console.log(`   Columna ${colIndex}: ${cell.value}`);
+            });
+        });
+    };
+
+    // Leer el contenido del archivo como un ArrayBuffer
+    reader.readAsArrayBuffer(archivo);
+}
