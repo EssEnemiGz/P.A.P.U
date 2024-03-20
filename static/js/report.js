@@ -127,15 +127,34 @@ async function leerArchivoExcel() {
         await workbook.xlsx.load(buffer);
 
         // Obtener la primera hoja de cálculo del archivo
-        const worksheet = workbook.getWorksheet(1);
+        const hojas = workbook.worksheets;
+        const rowData = {};
 
-        // Iterar sobre las filas y columnas del archivo Excel
-        worksheet.eachRow((row, rowIndex) => {
-            console.log(`Fila ${rowIndex}:`);
-            row.eachCell((cell, colIndex) => {
-                console.log(`   Columna ${colIndex}: ${cell.value}`);
-            });
-        });
+        for (let sheet = 1; sheet < hojas.length; sheet++){
+            let worksheet = workbook.getWorksheet(sheet);
+            let line_jump = null;
+            rowData[`hoja${sheet}`] = [];
+            rowData[`hoja${sheet}`].push([]);
+
+            for (let row = 1; row < 555; row++){
+                for (let col = 1; col < 9; col++){
+                    const cell = worksheet.getCell(row, col);
+
+                    if (line_jump === null) {
+                        line_jump = row;
+                        rowData[`hoja${sheet}`][0].push([]);
+                    }
+                    else if (line_jump !== row) {
+                        line_jump = row;
+                        rowData[`hoja${sheet}`][0].push([]);
+                    }
+                    else if (line_jump === row && cell.value !== null) {
+                        rowData[`hoja${sheet}`][0][row-1].push(cell.value);
+                    };
+                }
+            }
+        }
+        console.log(rowData);
     };
 
     // Leer el contenido del archivo como un ArrayBuffer
