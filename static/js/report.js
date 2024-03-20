@@ -153,6 +153,9 @@ async function leerArchivoExcel() {
                     };
                 }
             }
+
+            const listaFiltrada = rowData[`hoja${sheet}`][0].filter(elemento => elemento.length > 0);
+            rowData[`hoja${sheet}`][0] = listaFiltrada;
         }
         console.log(rowData);
     };
