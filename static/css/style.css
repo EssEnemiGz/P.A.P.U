@@ -218,7 +218,6 @@ body {
     border-radius: var(--radius-6);
     background-color: var(--white);
     box-shadow: var(--shadow-2);
-    height: fit-content;
 }
 
 .container{
@@ -251,6 +250,7 @@ body {
 .two-cards{
     display: grid;
     grid-template-columns: 1fr;
+    gap: 12px;
 }
 
 .home{
@@ -333,8 +333,6 @@ body {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-
-	background-color: var(--cultured);
 }
 
 .up__files{
@@ -347,6 +345,7 @@ body {
 	border: 1px solid rgba(0, 0, 0, 0.2);
 	border-radius: 50%;
 	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    background-color: var(--white);
 }
 
 .up__files:hover{
@@ -421,4 +420,8 @@ footer  a {
 .container-logo{
     display: flex;
     align-items: center;
+}
+
+span.text{
+    display: initial;
 }

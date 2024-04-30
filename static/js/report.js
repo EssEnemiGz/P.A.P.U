@@ -1,7 +1,3 @@
-// Datos para la gráfica de barras
-const labels = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
-let data = [];
-
 let myChart2 = null;
 let myChart3 = null;
 
@@ -14,7 +10,7 @@ function destruirGraficas() {
     }
 }
 
-function generarGráfica(){
+function generarGráfica(data, labels){
     destruirGraficas();
     // Crear la instancia de la gráfica
     const ctx2 = document.getElementById('myChart2').getContext('2d');
@@ -24,7 +20,7 @@ function generarGráfica(){
         data: {
             labels: labels,
             datasets: [{
-                label: 'Ventas por mes',
+                label: 'Cantidad de registros por tabla',
                 data: data,
                 backgroundColor: barColors, // Color de las barras
                 borderColor: '#8C898A', // Borde de las barras
@@ -39,7 +35,7 @@ function generarGráfica(){
         data: {
             labels: labels,
             datasets: [{
-                label: 'Ventas por mes',
+                label: 'Cantidad de registros por tabla',
                 data: data,
                 backgroundColor: barColors, // Color de las barras
                 borderColor: '#8C898A', // Borde de las barras
@@ -54,8 +50,6 @@ function generarGráfica(){
             }
     }});
 }
-
-generarGráfica()
 
 function cargarJSON() {
     const file = document.getElementById('up__input').files[0];
@@ -157,7 +151,32 @@ async function leerArchivoExcel() {
             const listaFiltrada = rowData[`hoja${sheet}`][0].filter(elemento => elemento.length > 0);
             rowData[`hoja${sheet}`][0] = listaFiltrada;
         }
-        console.log(rowData);
+        let fechaActual = new Date();          
+        let año = fechaActual.getFullYear();
+        let mes = fechaActual.getMonth() + 1; // Los meses van de 0 a 11, por eso se suma 1
+        let dia = fechaActual.getDate();          
+        let fechaFormateada = `${año}-${mes < 10 ? '0' + mes : mes}-${dia < 10 ? '0' + dia : dia}`;
+        let registers = 0;
+
+        let labels = [];
+        let data = [];
+        for (let i=1; i<hojas.length; i++){
+            labels.push(workbook.getWorksheet(i).name);
+            data.push(rowData[`hoja${i}`][0].length)
+            registers+=rowData[`hoja${i}`][0].length;
+        }
+        console.log(labels, data, workbook.getWorksheet(1).name)
+
+        document.querySelector(".db-name").innerText = "El presente informe detalla un análisis de datos obtenidos de la base de datos "+archivo.name+".";
+        document.querySelector(".db-name2").innerText = archivo.name;
+        document.querySelector(".date").innerText = fechaFormateada;
+        document.querySelector(".numero-registros").innerText = registers+" registros fueron encontrados por el sistema";
+        let size = archivo.size/1000;
+        document.querySelector(".size").innerText = "El tamaño total estimado de la base de datos es de "+size.toFixed(2)+"KB";
+        document.querySelector(".file-type").innerText = archivo.name.split(".")[1];
+
+        console.log(1)
+        generarGráfica(data, labels);
     };
 
     // Leer el contenido del archivo como un ArrayBuffer
